@@ -1,0 +1,13 @@
+{
+    "timezone": "Europe/Rome",
+
+    "days_ahead": 3,
+
+    "start_hour": 15,
+    "end_hour": 22,
+
+    "minimum_players": 0,
+
+    "include_online": true,
+    "include_offline": true
+}
