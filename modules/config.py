@@ -1,26 +1,27 @@
-import json
 import os
 
 
 def load_config():
 
-    with open("config.json", encoding="utf-8") as f:
-        config = json.load(f)
+    return {
+        "days_ahead": int(
+            os.getenv("DAYS_AHEAD", 3)
+        ),
 
-    config["days_ahead"] = int(
-        os.getenv("DAYS_AHEAD", config["days_ahead"])
-    )
+        "start_hour": int(
+            os.getenv("START_HOUR", 15)
+        ),
 
-    config["start_hour"] = int(
-        os.getenv("START_HOUR", config["start_hour"])
-    )
+        "end_hour": int(
+            os.getenv("END_HOUR", 22)
+        ),
 
-    config["end_hour"] = int(
-        os.getenv("END_HOUR", config["end_hour"])
-    )
+        "min_players": int(
+            os.getenv("MIN_PLAYERS", 0)
+        ),
 
-    config["min_players"] = int(
-        os.getenv("MIN_PLAYERS", config["min_players"])
-    )
-
-    return config
+        "timezone": os.getenv(
+            "TIMEZONE",
+            "Europe/Rome"
+        )
+    }

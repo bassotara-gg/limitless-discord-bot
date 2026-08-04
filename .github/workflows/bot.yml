@@ -38,6 +38,11 @@ jobs:
       - name: Run bot
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DAYS_AHEAD: ${{ vars.DAYS_AHEAD }}
+          START_HOUR: ${{ vars.START_HOUR }}
+          END_HOUR: ${{ vars.END_HOUR }}
+          MIN_PLAYERS: ${{ vars.MIN_PLAYERS }}
+          TIMEZONE: ${{ vars.TIMEZONE }}
         run: |
           python main.py
 
